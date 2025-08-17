@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strength</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Strength">
+  <script src="app.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; background:#222; color:#fff; margin:0; padding:20px; text-align:center; }
+    input, select, button { margin:8px; padding:6px; font-size:1em; }
+  </style>
+</head>
+<body>
+  <h1>Strength Calculator</h1>
+
+  <label>Top Set Weight (lbs):</label>
+  <input type="number" id="topWeight" value="225"><br>
+
+  <label>Reps:</label>
+  <input type="number" id="topReps" value="5"><br>
+
+  <label>RPE:</label>
+  <select id="topRPE"></select><br>
+
+  <label>Backoff % of e1RM:</label>
+  <input type="range" id="backoffPercent" min="50" max="95" value="75" step="1" oninput="percentLabel.innerText=this.value+'%'">
+  <span id="percentLabel">75%</span><br>
+
+  <label>Target Backoff RPE:</label>
+  <select id="backoffRPE"></select><br>
+
+  <label>Target Backoff Reps:</label>
+  <input type="number" id="backoffReps" value="6"><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <h2>Results</h2>
+  <div id="results"></div>
+</body>
+</html>
